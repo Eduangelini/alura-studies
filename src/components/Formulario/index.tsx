@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../Button'
 import style from './Formulario.module.scss'
 import { Itarefa } from '../../types/ITarefa'
@@ -10,8 +10,8 @@ interface FormularioProps {
 
 const Formulario = ({ setTarefas }: FormularioProps) => {
 
-  const [time, setTime] = React.useState('00:00:00')
-  const [tarefa, setTarefa] = React.useState('')
+  const [time, setTime] = useState('00:00:00')
+  const [tarefa, setTarefa] = useState('')
 
   const adicionarTarefa = (evento: React.FormEvent<HTMLFormElement>) => {
     evento.preventDefault()
@@ -75,12 +75,3 @@ const Formulario = ({ setTarefas }: FormularioProps) => {
 }
 
 export default Formulario
-
-
- // const handleSubmit = (evento: React.FormEvent<HTMLFormElement>) => {
-  //   evento.preventDefault()
-  //   const form = evento.target as HTMLFormElement
-  //   const tarefa = form.tarefa.value
-  //   const tempo = form.tempo.value
-  //   console.log(tarefa, tempo)
-  // }
